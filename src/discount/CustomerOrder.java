@@ -17,15 +17,15 @@ public class CustomerOrder {
         switch (discountType) {
             case 'S':
             case 's':
-                tempBill = billAmount - (billAmount * 0.1);
+                tempBill = new TenPercentDiscount().calculateDiscount(billAmount);
                 break;
             case 'D':
             case 'd':
-                tempBill = billAmount - (billAmount * 0.5);
+                tempBill = new FiftyPercentDiscount().calculateDiscount(billAmount);
                 break;
             case 'L':
             case 'l':
-                tempBill = billAmount - (billAmount * 0.75);
+                tempBill = new SeventyFivePercentDiscount().calculateDiscount(billAmount);
                 break;
             default:
                 tempBill = billAmount;
